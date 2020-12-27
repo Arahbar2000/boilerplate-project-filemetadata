@@ -13,8 +13,9 @@ app.get('/', function (req, res) {
     res.sendFile(process.cwd() + '/views/index.html');
 });
 
-app.post('/api/fileanalyze', function (req, res) {
+app.post('/api/fileanalyse', function (req, res) {
   const { originalname, mimetype, size } = req.file
+  console.log(req.file);
   res.json({
     name: originalname,
     type: mimetype,
